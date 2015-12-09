@@ -1,0 +1,29 @@
+{
+  "name": "github-api-simple",
+  "version": "0.0.1",
+  "description": "Simple Github API wrapper for unauthenticated end points",
+  "main": "github-api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MichielvdVelde/github-api-simple.git"
+  },
+  "keywords": [
+    "github",
+    "api",
+    "wrapper",
+    "simple"
+  ],
+  "author": "Michiel van der Velde <michiel@michielvdvelde.nl>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MichielvdVelde/github-api-simple/issues"
+  },
+  "homepage": "https://github.com/MichielvdVelde/github-api-simple#readme",
+  "dependencies": {
+    "debug": "^2.2.0",
+    "request-promise": "^1.0.2"
+  }
+}
