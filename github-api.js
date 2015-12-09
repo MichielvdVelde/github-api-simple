@@ -1,12 +1,13 @@
 "use strict";
 
+const path = require('path');
 const readFileSync = require('fs').readFileSync;
 const extend = require('extend');
 const requestP = require('request-promise');
 const pkg = require('./package');
 
 // Routes definition
-const ROUTES = JSON.parse(readFileSync('routes.json', 'utf-8'));
+const ROUTES = JSON.parse(readFileSync(path.join(__dirname, '/assets/routes.json'), 'utf-8'));
 
 // Default configuration options
 const DEFAULT_OPTIONS = {

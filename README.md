@@ -15,7 +15,8 @@ npm install github-api-simple
 ## Usage
 
 ```js
-let simpleApi = require('github-api-simple');
+const SimpleApi = require('github-api-simple');
+let api = new SimpleApi(); // takes an options argument, see below
 
 simpleApi.Repositories.getReposForUser('MichielvdVelde')
 	.then(function(repos) {
@@ -23,11 +24,38 @@ simpleApi.Repositories.getReposForUser('MichielvdVelde')
 	});
 ```
 
+The constructor takes an options argument, which is fed to [request-promise](https://github.com/request/request-promise). The defaults are:
+
+```js
+const DEFAULT_OPTIONS = {
+	'baseUrl': 'https://api.github.com',
+	'headers': {
+		'User-Agent': 'github-api-simple v' + pkg.version + ' [nodejs] [https://github.com/MichielvdVelde/github-api-simple]'
+	},
+	'json': true
+};
+```
+
 ## Routes
 
 ### Users
 
 #### Single user
+
+All route methods take an optional `options` object as the last argument. This object is `extend()`-ed with the options you gave when usig `new`. For example, if you want to get all your repositories sorted by when it was last pushed to, you can:
+
+```js
+let options = {
+	'qs': {
+		'sort': 'pushed',
+		'direction': 'desc' // optional, GitHub API uses 'desc' by default for 'pushed'
+	}
+}
+simpleApi.Repositories.getReposForUser('MichielvdVelde', options)
+	.then(function(repos) {
+		console.log('This user has %d repos', repos.length);
+	});
+```
 
 [GitHub API reference](https://developer.github.com/v3/users/#get-a-single-user)
 
@@ -156,8 +184,11 @@ simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'ma
 
 # Changelog
 
-* 0.0.1 - 9 December 2015
-  * Initial commit
+* 0.0.1 - 0.0.3 - 9 December 2015
+  * (0.0.3) Improved readme
+  * (0.0.2) Moved `routes.json` to dir `assets`
+  * (0.0.2) Fixed stupid-ass path error
+  * (0.0.1) Initial commit
 
 ## License
 
