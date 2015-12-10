@@ -36,6 +36,8 @@ const DEFAULT_OPTIONS = {
 };
 ```
 
+You can change the `User-Agent` header to set your own, the GitHub API requires one.
+
 ## Routes
 
 ### Users
@@ -177,15 +179,132 @@ simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'ma
 	});
 ```
 
+### Followers
+
+
+#### Get followers for user
+
+[GitHub API reference](https://developer.github.com/v3/users/followers/#list-followers-of-a-user)
+
+```js
+simpleApi.Followers.getFollowersForUser('MichielvdVelde')
+	.then(function(followers) {
+		console.log('This user has %d followers', followers.length);
+	});
+```
+
+
+#### Get followers by user
+
+[GitHub API reference](https://developer.github.com/v3/users/followers/#list-followers-of-a-user)
+
+```js
+simpleApi.Followers.getFollowersByUser('MichielvdVelde')
+	.then(function(followers) {
+		console.log('This user follows %d others', followers.length);
+	});
+```
+
+### Issues
+
+
+#### Get issues for repository
+
+[GitHub API reference](https://developer.github.com/v3/issues/#list-issues-for-a-repository)
+
+```js
+simpleApi.Issues.getIssuesForRepo('MichielvdVelde', 'github-api-simple')
+	.then(function(issues) {
+		console.log('This repo has %d issues', issues.length);
+	});
+```
+
+
+#### Get a single issue
+
+[GitHub API reference](https://developer.github.com/v3/issues/#get-a-single-issue)
+
+```js
+simpleApi.Issues.getIssue('MichielvdVelde', 'github-api-simple', 138)
+	.then(function(issue) {
+		console.log('This issue is %s', issue.state);
+	});
+```
+
+
+#### Get issue comments
+
+[GitHub API reference](https://developer.github.com/v3/issues/comments/#list-comments-on-an-issue)
+
+```js
+simpleApi.Issues.getIssueComments('MichielvdVelde', 'github-api-simple', 138)
+	.then(function(comments) {
+		console.log('This issue has %d comments', comments.length);
+	});
+```
+
+
+#### Get issue comments
+
+[GitHub API reference](https://developer.github.com/v3/issues/comments/#list-comments-in-a-repository)
+
+```js
+simpleApi.Issues.getRepoIssues('MichielvdVelde', 'github-api-simple')
+	.then(function(issues) {
+		console.log('This repo has %d issues', issues.length);
+	});
+```
+
+
+#### Get issue comment
+
+[GitHub API reference](https://developer.github.com/v3/issues/comments/#get-a-single-comment)
+
+```js
+simpleApi.Issues.getIssueComment('MichielvdVelde', 'github-api-simple', 96)
+	.then(function(comment) {
+		console.log('Comment by %s', comment.owner.login);
+	});
+```
+
+### Milestones
+
+
+#### Get all milestones for a repository
+
+[GitHub API reference](https://developer.github.com/v3/issues/milestones/#list-milestones-for-a-repository)
+
+```js
+simpleApi.Milestones.getRepoMilestones('MichielvdVelde', 'github-api-simple')
+	.then(function(milestones) {
+		console.log('This repo has %d milestones', milestones.length);
+	});
+```
+
+
+#### Get a single milestone
+
+[GitHub API reference](https://developer.github.com/v3/issues/milestones/#get-a-single-milestone)
+
+```js
+simpleApi.Milestones.getMilestone('MichielvdVelde', 'github-api-simple', 544)
+	.then(function(milestone) {
+		console.log('Milestone title i %s', milestone.title);
+	});
+```
+
 # To do
 
 * Add the rest of the applicable API end points to the routes file
 * Add paging support
-* MAke rate limiting headers available
+* Make rate limiting headers available
 * Write some tests
 
 # Changelog
 
+* 0.0.4 - 10 December 2015
+  * Added a lot of new end points to `routes.json`
+  * Fixed some readme mistakes
 * 0.0.1 - 0.0.3 - 9 December 2015
   * (0.0.3) Improved readme
   * (0.0.2) Moved `routes.json` to dir `assets`

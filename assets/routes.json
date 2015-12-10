@@ -42,5 +42,47 @@
 			"method": "getRepoBranche",
 			"uri": "/repos/%s/%s/branches/%s"
 		}
+	],
+	"Followers": [
+		{
+			"method": "getFollowersForUser",
+			"uri": "/users/%s/followers"
+		},
+		{
+			"method": "getFollowersByUser",
+			"uri": "/users/%s/following"
+		}
+	],
+	"Issues": [
+		{
+			"method": "getIssuesForRepo",
+			"uri": "/repos/%s/%s/issues"
+		},
+		{
+			"method": "getIssue",
+			"uri": "/repos/%s/%s/issues/%s"
+		},
+		{
+			"method": "getIssueComments",
+			"uri": "/repos/%s/%s/issues/%s/comments"
+		},
+		{
+			"method": "getRepoIssues",
+			"uri": "/repos/%s/%s/issues/comments"
+		},
+		{
+			"method": "getIssueComment",
+			"uri": "/repos/%s/%s/issues/comments/%s"
+		}
+	],
+	"Milestones": [
+		{
+			"method": "getRepoMilestones",
+			"uri": "/repos/%s/%s/milestones"
+		},
+		{
+			"method": "getMilestone",
+			"uri": "/repos/%s/%s/milestones/%s"
+		}
 	]
 }
