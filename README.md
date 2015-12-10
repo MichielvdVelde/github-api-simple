@@ -51,7 +51,7 @@ let options = {
 		'direction': 'desc' // optional, GitHub API uses 'desc' by default for 'pushed'
 	}
 }
-simpleApi.Repositories.getReposForUser('MichielvdVelde', options)
+simpleApi.User.getUser('MichielvdVelde', options)
 	.then(function(repos) {
 		console.log('This user has %d repos', repos.length);
 	});
@@ -60,7 +60,7 @@ simpleApi.Repositories.getReposForUser('MichielvdVelde', options)
 [GitHub API reference](https://developer.github.com/v3/users/#get-a-single-user)
 
 ```js
-simpleApi.Repositories.getReposForUser('MichielvdVelde')
+simpleApi.Users.getUser('MichielvdVelde')
 	.then(function(repos) {
 		console.log('This user has %d repos', repos.length);
 	});
@@ -71,7 +71,7 @@ simpleApi.Repositories.getReposForUser('MichielvdVelde')
 [GitHub API reference](https://developer.github.com/v3/users/#get-all-users)
 
 ```js
-simpleApi.Repositories.getReposForUser('MichielvdVelde')
+simpleApi.Users.getUsers('MichielvdVelde')
 	.then(function(repos) {
 		console.log('This user has %d repos', repos.length);
 	});
@@ -180,6 +180,8 @@ simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'ma
 # To do
 
 * Add the rest of the applicable API end points to the routes file
+* Add paging support
+* MAke rate limiting headers available
 * Write some tests
 
 # Changelog
