@@ -71,7 +71,7 @@ simpleApi.Users.getUser('MichielvdVelde')
 [GitHub API reference](https://developer.github.com/v3/users/#get-all-users)
 
 ```js
-simpleApi.Users.getUsers('MichielvdVelde')
+simpleApi.Users.getUsers()
 	.then(function(repos) {
 		console.log('This user has %d repos', repos.length);
 	});
