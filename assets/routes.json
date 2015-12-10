@@ -41,6 +41,10 @@
 		{
 			"method": "getRepoBranche",
 			"uri": "/repos/%s/%s/branches/%s"
+		},
+		{
+			"method": "getRepoFile",
+			"uri": "/repos/%s/%s/contents/%s"
 		}
 	],
 	"Followers": [

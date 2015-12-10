@@ -179,6 +179,18 @@ simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'ma
 	});
 ```
 
+
+#### Contents of a repository file
+
+[GitHub API reference](https://developer.github.com/v3/repos/contents/#get-contents)
+
+```js
+simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'README.md')
+	.then(function(content) {
+		console.log('Readme sha is %s', content.sha);
+	});
+```
+
 ### Followers
 
 
@@ -302,9 +314,10 @@ simpleApi.Milestones.getMilestone('MichielvdVelde', 'github-api-simple', 544)
 
 # Changelog
 
-* 0.0.4 - 10 December 2015
-  * Added a lot of new end points to `routes.json`
-  * Fixed some readme mistakes
+* 0.0.4 - 0.0.5 10 December 2015
+  * (0.0.5) Added `Repositories.getRepositoryFile(username, reponame, filename)`
+  * (0.0.4) Added a lot of new end points to `routes.json`
+  * (0.0.4) Fixed some readme mistakes
 * 0.0.1 - 0.0.3 - 9 December 2015
   * (0.0.3) Improved readme
   * (0.0.2) Moved `routes.json` to dir `assets`
