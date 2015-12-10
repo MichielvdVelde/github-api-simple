@@ -74,8 +74,8 @@ simpleApi.Users.getUser('MichielvdVelde')
 
 ```js
 simpleApi.Users.getUsers()
-	.then(function(repos) {
-		console.log('This user has %d repos', repos.length);
+	.then(function(users) {
+		console.log('I got %d users', users.length);
 	});
 ```
 
