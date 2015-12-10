@@ -51,7 +51,7 @@ let options = {
 		'direction': 'desc' // optional, GitHub API uses 'desc' by default for 'pushed'
 	}
 }
-simpleApi.User.getUser('MichielvdVelde', options)
+simpleApi.Users.getUser('MichielvdVelde', options)
 	.then(function(repos) {
 		console.log('This user has %d repos', repos.length);
 	});
