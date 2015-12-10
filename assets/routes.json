@@ -45,6 +45,14 @@
 		{
 			"method": "getRepoFile",
 			"uri": "/repos/%s/%s/contents/%s"
+		},
+		{
+			"method": "getRepoCommits",
+			"uri": "/repos/%s/%s/commits"
+		},
+		{
+			"method": "getRepoCommit",
+			"uri": "/repos/%s/%s/commits/%s"
 		}
 	],
 	"Followers": [

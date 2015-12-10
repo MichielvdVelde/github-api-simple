@@ -191,6 +191,30 @@ simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'RE
 	});
 ```
 
+
+#### Repository commits
+
+[GitHub API reference](https://developer.github.com/v3/repos/commits/#list-commits-on-a-repository)
+
+```js
+simpleApi.Repositories.getRepoCommits('MichielvdVelde', 'github-api-simple')
+	.then(function(commits) {
+		console.log('This repo has %d commits', commits.length);
+	});
+```
+
+
+#### Repository single commit
+
+[GitHub API reference](https://developer.github.com/v3/repos/commits/#get-a-single-commit)
+
+```js
+simpleApi.Repositories.getRepoCommit('MichielvdVelde', 'github-api-simple', '6dcb09b5b57875f334f61aebed695e2e4193db5e')
+	.then(function(commit) {
+		console.log('Commit %s says %s', commit.sha, commit.commit.message);
+	});
+```
+
 ### Followers
 
 
@@ -315,6 +339,7 @@ simpleApi.Milestones.getMilestone('MichielvdVelde', 'github-api-simple', 544)
 # Changelog
 
 * 0.0.4 - 0.0.5 10 December 2015
+  * (0.0.6) Added `Repositories.getRepoCommits()` and `Repositories.getRepoCommit()`
   * (0.0.5) Added `Repositories.getRepositoryFile(username, reponame, filename)`
   * (0.0.4) Added a lot of new end points to `routes.json`
   * (0.0.4) Fixed some readme mistakes
