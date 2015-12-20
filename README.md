@@ -185,7 +185,7 @@ simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'ma
 [GitHub API reference](https://developer.github.com/v3/repos/contents/#get-contents)
 
 ```js
-simpleApi.Repositories.getRepoBranche('MichielvdVelde', 'github-api-simple', 'README.md')
+simpleApi.Repositories.getRepoFile('MichielvdVelde', 'github-api-simple', 'README.md')
 	.then(function(content) {
 		console.log('Readme sha is %s', content.sha);
 	});
