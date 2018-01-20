@@ -89,6 +89,10 @@
 		{
 			"method": "getIssueComment",
 			"uri": "/repos/%s/%s/issues/comments/%s"
+		},
+		{
+			"method": "getIssuesForOrg",
+			"uri": "/search/issues/?q=org:%s+label:%s"
 		}
 	],
 	"Milestones": [
